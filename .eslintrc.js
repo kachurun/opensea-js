@@ -20,6 +20,7 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
+    "@typescript-eslint/ban-ts-comment": 0,
     "no-restricted-globals": ["error"].concat(restrictedGlobals),
     curly: ["error"],
     "@typescript-eslint/no-unused-vars": [

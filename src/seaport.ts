@@ -4320,6 +4320,7 @@ export class OpenSeaPort {
   public async isAuthenticatedProxyRevoked(
     accountAddress: string
   ): Promise<boolean> {
+    // @ts-ignore
     const proxy = await this._wyvernProtocol.getAuthenticatedProxy(
       accountAddress
     );
@@ -4335,6 +4336,7 @@ export class OpenSeaPort {
   public async revokeAuthenticatedProxyAccess(
     accountAddress: string
   ): Promise<string> {
+    // @ts-ignore
     const proxy = await this._wyvernProtocol.getAuthenticatedProxy(
       accountAddress
     );
@@ -4349,6 +4351,7 @@ export class OpenSeaPort {
   public async unrevokeAuthenticatedProxyAccess(
     accountAddress: string
   ): Promise<string> {
+    // @ts-ignore
     const proxy = await this._wyvernProtocol.getAuthenticatedProxy(
       accountAddress
     );
