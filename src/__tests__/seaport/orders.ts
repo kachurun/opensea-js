@@ -1,7 +1,7 @@
 import { BigNumber } from "bignumber.js";
 import { assert } from "chai";
 import { before, suite, test } from "mocha";
-import * as Web3 from "web3";
+import Web3 from "web3";
 import {
   ENJIN_ADDRESS,
   INVERSE_BASIS_POINT,
@@ -32,12 +32,13 @@ import {
 import {
   ALEX_ADDRESS,
   ALEX_ADDRESS_2,
-  CATS_IN_MECHS_ID,
   CK_ADDRESS,
   CK_RINKEBY_ADDRESS,
   CK_RINKEBY_TOKEN_ID,
   CK_TOKEN_ID,
   CRYPTOFLOWERS_CONTRACT_ADDRESS_WITH_BUYER_FEE,
+  CRYPTOVOXELS_WEARABLE_2_ID,
+  CRYPTOVOXELS_WEARABLE_ADDRESS,
   DEVIN_ADDRESS,
   DIGITAL_ART_CHAIN_ADDRESS,
   DIGITAL_ART_CHAIN_TOKEN_ID,
@@ -356,7 +357,6 @@ suite("seaport: orders", () => {
     const tokenId = MYTHEREUM_TOKEN_ID.toString();
     const tokenAddress = MYTHEREUM_ADDRESS;
 
-    // @ts-expect-error unused
     const _asset = await client.api.getAsset({ tokenAddress, tokenId });
 
     const order = await client._makeSellOrder({
@@ -657,7 +657,6 @@ suite("seaport: orders", () => {
 
   test.skip("Creates ENS name buy order", async () => {
     const paymentTokenAddress = WETH_ADDRESS;
-    // @ts-expect-error unused
     const _buyOrder = await rinkebyClient._makeBuyOrder({
       asset: {
         tokenId: ENS_HELLO_TOKEN_ID,
@@ -754,8 +753,8 @@ suite("seaport: orders", () => {
     const takerAddress = ALEX_ADDRESS_2;
     const amountInEth = 2;
 
-    const tokenId = CATS_IN_MECHS_ID;
-    const tokenAddress = ENJIN_ADDRESS;
+    const tokenId = CRYPTOVOXELS_WEARABLE_2_ID;
+    const tokenAddress = CRYPTOVOXELS_WEARABLE_ADDRESS;
 
     const asset = await client.api.getAsset({ tokenAddress, tokenId });
 
